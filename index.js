@@ -60,7 +60,7 @@ function shuffle() {
 }
 
 function randomLetters() {
-  let consonants = 'bcdfghjklmnpqrstvwxyz',
+  let consonants = 'bcdfghjklmnpqrstvwxyzaeiou',
     vowels = 'aeiou',
     output = ''
 
