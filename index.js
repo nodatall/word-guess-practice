@@ -1,7 +1,7 @@
 ( function wordGuesser(){
   this.guess = document.getElementById('guess')
   this.letters = 'NAIPLRA'
-  this.guess = this.guess.bind(this)
+  this.clickButton = this.clickButton.bind(this)
   this.shuffle = this.shuffle.bind(this)
   this.randomLetters = this.randomLetters.bind(this)
   this.changeLength = this.changeLength.bind(this)
@@ -16,13 +16,13 @@ function setLetters() {
 }
 
 function addButtonListeners() {
-  document.getElementById('guessButton').addEventListener('click', guess)
+  document.getElementById('guessButton').addEventListener('click', clickButton)
   document.getElementById('shuffleButton').addEventListener('click', shuffle)
   document.getElementById('randomButton').addEventListener('click', randomLetters)
   document.getElementById('lengthButton').addEventListener('click', changeLength)
 }
 
-function guess() {
+function clickButton() {
   let letters = this.letters.split(''),
     guess = document.getElementById('guess').value.split(''),
     isValidGuess = true
