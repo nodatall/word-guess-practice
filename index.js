@@ -1,7 +1,7 @@
 ( function wordGuesser(){
   this.guess = document.getElementById('guess')
   this.letters = 'NAIPLRA'
-  this.clickButton = this.clickButton.bind(this)
+  this.guess = this.guess.bind(this)
   this.shuffle = this.shuffle.bind(this)
   this.randomLetters = this.randomLetters.bind(this)
   this.changeLength = this.changeLength.bind(this)
@@ -16,13 +16,13 @@ function setLetters() {
 }
 
 function addButtonListeners() {
-  document.getElementById('guessButton').addEventListener('click', clickButton)
+  document.getElementById('guessButton').addEventListener('click', guess)
   document.getElementById('shuffleButton').addEventListener('click', shuffle)
   document.getElementById('randomButton').addEventListener('click', randomLetters)
   document.getElementById('lengthButton').addEventListener('click', changeLength)
 }
 
-function clickButton() {
+function guess() {
   let letters = this.letters.split(''),
     guess = document.getElementById('guess').value.split(''),
     isValidGuess = true
@@ -64,7 +64,6 @@ function randomLetters() {
     vowels = 'aeiou',
     output = ''
 
-    console.log('this.length:', this.length)
   for ( let index = 0; index < this.length - 2; index++ ) {
     output += consonants.charAt(Math.floor(Math.random() * consonants.length))
   }
